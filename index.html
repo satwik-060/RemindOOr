@@ -18,15 +18,32 @@
             display : flex;
             align-items : center;
             color : white;
-            background : rgb(22, 22, 22);
+            background : rgb(37, 36, 36);
+            height : 5vh;
+            /* padding : 10px; */
         }
         .navbar *{
             padding : 3px;
+        }
+        #logo{
+            cursor : pointer;
         }
         #home{
             margin-left : 20px;
             text-decoration: none;
             color : white;
+            height : 100%;
+            display : flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #home:hover{
+            background : rgb(0,0,0);
+        }
+        #searchbar{
+            padding : 7px;
+            border-radius : 10px;
+            border : none;
         }
         .container {
             display : flex;
@@ -49,16 +66,16 @@
             box-shadow : 5px 5px 5px rgb(172, 172, 172);
             border-radius : 5px;
         }
-        .addNoteButton{
+        .addNoteButton,.deleteNote,#searchButton{
             margin : 10px auto 10px 3px;
             padding : 7px 10px;
             color : white;
-            background : rgb(80, 75, 75);
+            background : rgb(49, 125, 160);
             border : rgb(255, 255, 255);
             border-radius : 5px;
         }
-        .addNoteButton:hover{
-            background :rgb(68, 62, 62);
+        .addNoteButton:hover,.deleteNote:hover,#searchButton:hover{
+            background :rgb(70, 124, 194);
             cursor : pointer;
         }
         .reminders{
@@ -92,6 +109,7 @@
             border : 1px solid rgb(172, 172, 172);
             box-shadow : 5px 5px 5px rgb(172, 172, 172);
         }
+       
     </style>
     <title>Remainders</title> 
 </head>
@@ -118,7 +136,8 @@
         <h1 class="headingYourNotes" >Your notes</h1>
     </div>
 
-    <div class="cardContainer" id = "cardContainer">           
+    <div class="cardContainer" id = "cardContainer"> 
+        `        
     </div>
     <script src="RemindOOr.js"></script>   
 </body>

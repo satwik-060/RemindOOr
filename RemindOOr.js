@@ -1,5 +1,5 @@
 console.log("welcome to RemindOOr");
-// showNotes();
+showNotes();
 let addBtn = document.getElementById("addNote");
 addBtn.addEventListener("click", (e)=>{
     let addText = document.getElementById('remind');
@@ -30,8 +30,9 @@ function showNotes(){
         html += `
         <div class="note">
                 <h4>Note ${index+1}</h4>
+                <hr>
                 <p>${element}</p>
-                <button class="deleteNote">Delete Note</button>
+                <button class="deleteNote" onclick="deleteNode(this.id)" id = "${index}" >Delete Note</button>
             </div>  `
     })
     if(noteTextArr.length != 0){
@@ -41,3 +42,34 @@ function showNotes(){
         cardContainer.innerHTML = `No Reminder Notes Yet! Type something in the "add a note" section and click the button "Add note" to add a reminder`;
     }
 }
+
+function deleteNode(index){
+    let notes = localStorage.getItem("notes");
+    if(notes == null)
+    {
+        notesObj = [];
+    }
+    else
+    {
+        notesObj = JSON.parse(notes);
+    }
+    notesObj.splice(index,1);
+    localStorage.setItem("notes",JSON.stringify(notesObj));
+    showNotes();
+}
+let search = document.getElementById("searchbar");
+search.addEventListener("input" , ()=>{
+    let inputValue = search.value.toLowerCase();
+    let cards = document.getElementsByClassName("note");
+    Array.from(cards).forEach(element =>{
+        let cardTxt = element.getElementsByTagName('p')[0].innerText;
+        if(cardTxt.includes(inputValue)){
+            element.style.display = "grid";
+            console.log("included");
+        }
+        else{
+            element.style.display = "none";
+        }
+    })
+
+})
