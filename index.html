@@ -1,144 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
     </style>
     <style>
-        *{
-            padding : 0;
-            margin : 0;
-            font-family: 'Montserrat', sans-serif;
-            box-sizing: border-box;
-        }
-        .navbar{
-            display : flex;
-            align-items : center;
-            color : white;
-            background : rgb(37, 36, 36);
-            height : 5vh;
-            /* padding : 10px; */
-        }
-        .navbar *{
-            padding : 3px;
-        }
-        #logo{
-            cursor : pointer;
-        }
-        #home{
-            margin-left : 20px;
-            text-decoration: none;
-            color : white;
-            height : 100%;
-            display : flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        #home:hover{
-            background : rgb(0,0,0);
-        }
-        #searchbar{
-            padding : 7px;
-            border-radius : 10px;
-            border : none;
-        }
-        .container {
-            display : flex;
-            flex-direction : column;
-            align-items : center ;
-            margin : 30px auto;
-            border-top : 1px solid rgb(172, 172, 172);
-            width : 50vw;
-            padding : 10px;
-        }
-        .textarea{
-            border : 1px solid rgb(172, 172, 172);
-            width : 50vw;
-            display: flex;
-            flex-direction: column;
-            align-items : center ;
-            justify-content: center;
-            padding : 10px;
-            margin : 10px;
-            box-shadow : 5px 5px 5px rgb(172, 172, 172);
-            border-radius : 5px;
-        }
-        .addNoteButton,.deleteNote,#searchButton{
-            margin : 10px auto 10px 3px;
-            padding : 7px 10px;
-            color : white;
-            background : rgb(49, 125, 160);
-            border : rgb(255, 255, 255);
-            border-radius : 5px;
-        }
-        .addNoteButton:hover,.deleteNote:hover,#searchButton:hover{
-            background :rgb(70, 124, 194);
-            cursor : pointer;
-        }
-        .reminders{
-            width : 48vw !important;
-            padding : 15px;
-        }
-        .yourNotesDiv{
-            display : flex;
-            align-items : center;
-            justify-content: center;
-        }
-        .headingYourNotes{
-            text-align : center;
-            border-top : 1px solid rgb(172, 172, 172);
-            border-bottom : 1px solid rgb(172, 172, 172);
-            width : 50vw;
-            padding : 10px;
-        }
-        .cardContainer{
-            width : 50vw;
-            margin : auto;
-            display : grid ;
-            grid-template-columns: auto auto auto;
-            grid-gap : 5px;
-            justify-content : center;
-            padding : 5px;
-        }
-        .note{
-            width : 15vw;
-            padding : 10px;
-            border : 1px solid rgb(172, 172, 172);
-            box-shadow : 5px 5px 5px rgb(172, 172, 172);
-        }
-       
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        color: white;
+        background: rgb(37, 36, 36);
+        height: 5vh;
+        /* padding : 10px; */
+      }
+      .navbar * {
+        padding: 3px;
+      }
+      #logo {
+        cursor: pointer;
+      }
+      #home {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #home:hover {
+        background: rgb(0, 0, 0);
+      }
+      #searchbar {
+        padding: 7px;
+        border-radius: 10px;
+        border: none;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px auto;
+        border-top: 1px solid rgb(172, 172, 172);
+        width: 50vw;
+        padding: 10px;
+      }
+      #titleOfNote {
+        width: 100%;
+        margin: 10px auto;
+        padding: 2px 10px;
+      }
+      .textarea {
+        border: 1px solid rgb(172, 172, 172);
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 5px 5px 5px rgb(172, 172, 172);
+        border-radius: 5px;
+      }
+      .addNoteButton,
+      .deleteNote,
+      #searchButton {
+        margin: 10px auto 10px 3px;
+        padding: 7px 10px;
+        color: white;
+        background: rgb(49, 125, 160);
+        border: rgb(255, 255, 255);
+        border-radius: 5px;
+      }
+      .addNoteButton:hover,
+      .deleteNote:hover,
+      #searchButton:hover {
+        background: rgb(70, 124, 194);
+        cursor: pointer;
+      }
+      .reminders {
+        width: 100% !important;
+        padding: 15px;
+      }
+      .yourNotesDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .headingYourNotes {
+        text-align: center;
+        border-top: 1px solid rgb(172, 172, 172);
+        border-bottom: 1px solid rgb(172, 172, 172);
+        width: 50vw;
+        padding: 10px;
+      }
+      .cardContainer {
+        width: 50vw;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 5px;
+        justify-content: center;
+        padding: 5px;
+      }
+      .note {
+        width: 15vw;
+        padding: 10px;
+        border: 1px solid rgb(172, 172, 172);
+        box-shadow: 5px 5px 5px rgb(172, 172, 172);
+      }
     </style>
-    <title>Remainders</title> 
-</head>
-<body>
+    <title>Remainders</title>
+  </head>
+  <body>
     <div class="navbar">
-        <h2 id="logo">RemindOOr</h2>
-        <a href="#" id = "home">Home</a>
-        <div class="search" style ="margin-left : auto">
-            <input type="search" name="search" id="searchbar" placeholder = "search notes">
-            <button id="searchButton" >Search</button>
-        </div>
+      <h2 id="logo">RemindOOr</h2>
+      <a href="#" id="home">Home</a>
+      <div class="search" style="margin-left: auto">
+        <input
+          type="search"
+          name="search"
+          id="searchbar"
+          placeholder="search notes"
+        />
+        <button id="searchButton">Search</button>
+      </div>
     </div>
 
     <div class="container">
-        <h2 id = "welcome">Welcome To RemindOOr</h2>
-        <div class="textarea">
-            <h3 id="addnote">Add a Note</h3>
-            <textarea name="reminder" id="remind" cols="50" rows="5" class="reminders"></textarea>
-            <button class="addNoteButton" id = "addNote">Add Note</button>
-        </div>
+      <h2 id="welcome">Welcome To RemindOOr</h2>
+      <div class="textarea">
+        <input
+          type="text"
+          name="title"
+          id="titleOfNote"
+          placeholder="Add Title"
+        />
+        <textarea
+          name="reminder"
+          id="remind"
+          cols="50"
+          rows="25"
+          class="reminders"
+          placeholder="Add Title Description"
+        ></textarea>
+        <button class="addNoteButton" id="addNote">Add Note</button>
+      </div>
     </div>
 
     <div class="yourNotesDiv">
-        <h1 class="headingYourNotes" >Your notes</h1>
+      <h1 class="headingYourNotes">Your notes</h1>
     </div>
 
-    <div class="cardContainer" id = "cardContainer"> 
-        `        
-    </div>
-    <script src="RemindOOr.js"></script>   
-</body>
+    <div class="cardContainer" id="cardContainer"></div>
+    <script src="RemindOOr.js"></script>
+  </body>
 </html>
